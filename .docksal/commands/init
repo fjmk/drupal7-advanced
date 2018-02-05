@@ -97,7 +97,7 @@ init_settings ()
 	copy_settings_file "${SITEDIR_PATH}/example.settings.local.php" "${SITEDIR_PATH}/settings.local.php"
 	
 	# Behat
-	copy_settings_file 'tests/behat/behat.yml.dist' 'tests/behat/behat.yml'
+	copy_settings_file "${PROJECT_ROOT}/tests/behat/behat.yml.dist" "${PROJECT_ROOT}/tests/behat/behat.yml"
 }
 
 # Fix file/folder permissions
@@ -238,7 +238,7 @@ echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the
 
 #db_import
 #db_updates
-#local_settings
+local_settings
 #compass_compile
 #run_behat
 
