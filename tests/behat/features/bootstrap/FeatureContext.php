@@ -34,7 +34,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function after(Behat\Behat\Hook\Scope\AfterStepScope $scope) {
     if ($scope->getTestResult()->getResultCode() === 99) {
       $driver = $this->getSession()->getDriver();
-      if ($driver instanceof Behat\Mink\Driver\Selenium2Driver) {
+      if ($driver instanceof Behat\Mink\Driver\Selenium2Driver || $driver instanceof DMore\ChromeDriver\ChromeDriver) {
         $fileName = date('d-m-y') . '-' . uniqid() . '.png';
         $this->saveScreenshot($fileName, $this->screenshot_dir);
         print 'Screenshot at: '.$this->screenshot_dir.'/' . $fileName;

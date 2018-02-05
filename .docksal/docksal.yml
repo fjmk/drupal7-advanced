@@ -19,4 +19,10 @@ services:
     dns:
       - ${DOCKSAL_DNS1}
       - ${DOCKSAL_DNS2}
-        
+
+  chrome:
+    hostname: chrome
+    image: alpeware/chrome-headless-stable
+    dns:
+      - ${DOCKSAL_DNS1}
+      - ${DOCKSAL_DNS2}
