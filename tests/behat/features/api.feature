@@ -220,7 +220,7 @@ Feature: DrupalContext
     When I am on the homepage
     Then I should see the text "Sun, 07/27/2014 - 00:03"
 
-  @d7 @d8
+  @d8
   Scenario: Node hooks are functioning
     Given "article" content:
       | title        | body        | published on       | status | promote |
@@ -233,7 +233,7 @@ Feature: DrupalContext
     Given I am logged in as a user with the "administrator" role
     Then I should be able to edit an "article"
 
-  @d7 @d8
+  @d8
   Scenario: User hooks are functioning
     Given users:
       | First name | Last name | E-mail               |
@@ -241,17 +241,6 @@ Feature: DrupalContext
     And I am logged in as a user with the "administrator" role
     When I visit "admin/people"
     Then I should see the link "Joe User"
-
-  @d7
-  Scenario: Term hooks are functioning
-    Given "tags" terms:
-      | Label     |
-      | Tag one   |
-      | Tag two   |
-    And I am logged in as a user with the "administrator" role
-    When I go to "admin/structure/taxonomy/tags"
-    Then I should see "Tag one"
-    And I should see "Tag two"
 
   @d8
   Scenario: Term hooks are functioning

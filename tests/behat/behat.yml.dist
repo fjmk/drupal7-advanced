@@ -2,7 +2,7 @@ imports:
   - behat.common.yml
 
 # Local overrides to the default profile
-default:
+docker:
   extensions:
     Behat\MinkExtension:
       # URL of the site when accessed locally.
